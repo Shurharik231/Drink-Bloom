@@ -1,0 +1,277 @@
+/* ============================================= */
+/* Drink & Bloom — Главный стиль (премиум 2026)  */
+/* ============================================= */
+
+:root {
+    --gold: #d4af37;
+    --gold-dark: #b8972e;
+    --gold-light: #e5c068;
+    --dark: #0a0a0a;
+    --dark-overlay: rgba(10, 10, 10, 0.85);
+    --text-light: #f8f8f8;
+    --text-muted: #c0c0c0;
+    --glass: rgba(15, 15, 15, 0.65);
+}
+
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Шрифты заголовков */
+h1, h2, h3, .product-title, .section-title {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.02em;
+}
+
+/* Фон и видео */
+.video-background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    filter: brightness(0.55) contrast(1.05) saturate(0.92);
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.45), var(--dark-overlay) 60%, var(--dark-overlay));
+    backdrop-filter: blur(8px) saturate(0.9);
+    -webkit-backdrop-filter: blur(8px) saturate(0.9);
+    z-index: -1;
+}
+
+/* Header — стеклянный, статусный */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(10,10,10,0.82);
+    backdrop-filter: blur(20px) saturate(0.9);
+    -webkit-backdrop-filter: blur(20px) saturate(0.9);
+    border-bottom: 1px solid rgba(212,175,55,0.3);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.6);
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 10px rgba(212,175,55,0.3);
+}
+
+nav ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--gold);
+    text-shadow: 0 0 12px rgba(212,175,55,0.5);
+}
+
+/* Кнопка премиум */
+.gold-btn {
+    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+    color: #111;
+    font-weight: 700;
+    padding: 0.9rem 2rem;
+    border-radius: 9999px;
+    box-shadow: 0 8px 25px rgba(212,175,55,0.35);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    letter-spacing: 0.04em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.gold-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px rgba(212,175,55,0.5);
+    background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+}
+
+/* Карточки товаров — единый стиль */
+.product-card {
+    background: var(--glass);
+    backdrop-filter: blur(12px) saturate(0.9);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(212,175,55,0.25);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.65);
+    transition: all 0.45s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 80px rgba(212,175,55,0.3), 0 0 0 1px rgba(212,175,55,0.45);
+    border-color: var(--gold);
+}
+
+.media-container {
+    height: 320px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.media-container img,
+.media-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.product-card:hover .media-container img,
+.product-card:hover .media-container video {
+    transform: scale(1.08);
+    filter: brightness(1.05) contrast(1.08);
+}
+
+/* Текстовый блок карточки */
+.product-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+.product-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+.product-description {
+    flex-grow: 1;
+    font-size: 0.98rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    margin-bottom: 1rem;
+}
+
+.product-card:hover .product-description {
+    overflow-y: auto;
+    max-height: 180px;
+}
+
+.price-and-btn {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-price {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--gold);
+}
+
+/* Hero (index.php) */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.hero h1 {
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: white;
+    text-shadow: 0 8px 32px rgba(0,0,0,0.7);
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: #ddd;
+}
+
+/* Секции преимуществ и другие */
+.section {
+    padding: 8rem 0;
+    background: rgba(10,10,10,0.8);
+    backdrop-filter: blur(12px);
+}
+
+.section-title {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    text-align: center;
+    margin-bottom: 5rem;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background: rgba(10,10,10,0.9);
+    backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(212,175,55,0.12);
+    padding: 5rem 0 3rem;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .hero h1 { font-size: clamp(3rem, 12vw, 5.5rem); }
+    .section { padding: 6rem 0; }
+    nav ul { gap: 1.5rem; font-size: 1rem; }
+}

@@ -1,0 +1,42 @@
+[
+    {
+        "product_id": 3,
+        "name": "Shura FunTime",
+        "phone": "89994012513",
+        "address": "улица Минская, 2",
+        "comment": "",
+        "screenshot": "",
+        "date": "2026-02-23 19:35:34",
+        "status": "Подтверждён"
+    },
+    {
+        "product_id": 2,
+        "name": "Shura FunTime",
+        "phone": "89994012513",
+        "address": "улица Минская, 2",
+        "comment": "",
+        "screenshot": "",
+        "date": "2026-02-23 19:35:47",
+        "status": "Подтверждён"
+    },
+    {
+        "product_id": 4,
+        "name": "Shura FunTime",
+        "phone": "89994012513",
+        "address": "улица Минская, 2",
+        "comment": "",
+        "screenshot": "",
+        "date": "2026-02-23 19:36:07",
+        "status": "Подтверждён"
+    },
+    {
+        "product_id": 5,
+        "name": "Shura FunTime",
+        "phone": "89994012513",
+        "address": "улица Минская, 2",
+        "comment": "",
+        "screenshot": "",
+        "date": "2026-02-23 20:35:23",
+        "status": "Подтверждён"
+    }
+]
